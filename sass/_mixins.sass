@@ -1,0 +1,138 @@
+// Вертикальное выравнивание
+
+=vertical
+	font-size: 0
+	&:before 
+		content: ''
+		display: inline-block
+		vertical-align: middle
+		width: 0
+		height: 100%
+
+// Оформление номеров списка
+
+=counter($var)
+	counter-reset: $var
+	& > li:before
+		content: counter($var)
+		counter-increment: $var
+
+// Выравнивает (растягивает) текст по ширине контента
+
+=justify
+	text-align: justify
+	line-height: 0
+	font-size: 0
+	text-justify: newspaper
+	zoom: 1
+	text-align-last: justify
+	&:after
+		content: ''
+		display: inline-block
+		width: 100%
+		height: 0
+		visibility: hidden
+		overflow: hidden
+
+// Цвет placeholder-а
+
+=placeholder-color($color)
+	&:-moz-placeholder, // Firefox 18-
+	&::-moz-placeholder // Firefox 19+
+		color: $color
+		opacity: 1 // По умолчанию Firefox имеет прозрачность
+	&::-webkit-input-placeholder // Chrome/Opera/Safari
+		color: $color
+	&:-ms-input-placeholder // IE 10+
+		color: $color
+
+// Текст в одну строчку - если выходит за блок - добавляется ...
+
+=text-overflow
+	overflow: hidden
+	-ms-text-overflow: ellipsis
+	text-overflow: ellipsis
+	white-space: nowrap
+
+// Создание стрелочек
+
+=arr($width, $height, $bg, $direction)
+	width: 0px
+	height: 0px
+	border-style: solid
+	@if $direction == t
+		border-width: 0 $width / 2 + px $height + px $width / 2 + px
+		border-color: transparent transparent $bg transparent
+	@if $direction == r
+		border-width: $height / 2 + px 0 $height / 2 + px $width + px
+		border-color: transparent transparent transparent $bg
+	@if $direction == b
+		border-width: $height + px $width / 2 + px 0 $width / 2 + px
+		border-color: $bg transparent transparent transparent
+	@if $direction == l
+		border-width: $height / 2 + px $width + px $height / 2 + px 0
+		border-color: transparent $bg transparent transparent
+	@if $direction == tl
+		border-width: $height + px $width + px 0 0
+		border-color: $bg transparent transparent transparent
+	@if $direction == tr
+		border-width: 0 $width + px $height + px 0
+		border-color: transparent $bg transparent transparent
+	@if $direction == br
+		border-width: 0 0 $height + px $width + px
+		border-color: transparent transparent $bg transparent
+	@if $direction == bl
+		border-width: $height + px 0 0 $width + px
+		border-color: transparent transparent transparent $bg
+
+// example
+// +arr(500,50, #000, l)
+// +arr(500,50, #000, bl)
+
+// Добавление шрифтов
+
+=font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false )
+	@font-face
+		font-family: $font-family
+		font-weight: $weight
+		font-style: $style
+
+		@if $asset-pipeline == true 
+			src: font-url('#{$file-path}.eot')
+			src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), font-url('#{$file-path}.woff2') format('woff2'), font-url('#{$file-path}.woff') format('woff'), font-url('#{$file-path}.ttf') format('truetype')
+		@else
+			src: url('#{$file-path}.eot')
+			src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff2') format('woff2'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype')
+
+// Эффект перехода (анимации)
+
+=tr($var)
+	-webkit-transition: $var
+	-moz-transition: $var
+	-o-transition: $var
+	transition: $var
+
+// Закругление углов (border-radius)
+
+=br($var)
+	-webkit-border-radius: $var
+	-ms-border-radius: $var
+	-moz-border-radius: $var
+	-o-border-radius: $var
+	border-radius: $var
+
+//Clearfix - анулирование обтекания (float)
+
+=clr
+	&:after 
+		content: ' '
+		display: table
+		clear: both 
+	*zoom: 1
+
+// Responsive background image
+
+=rbg
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center

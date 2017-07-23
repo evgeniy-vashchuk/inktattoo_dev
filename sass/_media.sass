@@ -1,0 +1,274 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+	.gallery-1__item
+		width: 25%
+	.team
+		&__title
+			width: 100%
+			height: 200px
+		&__master-1-photo, &__master-description, &__master-2-photo
+			width: 50%
+		&__master-2-photo
+			float: right
+		&__subscription
+			width: 100%
+			height: 250px
+			padding-top: 30px
+			text-align: center
+		&__subscription-input, &__subscription-submit
+			max-width: 500px
+			margin: 0 auto 23px
+
+	.triangle--r
+		left: 0
+		border-width: 30px 0 30px 40px
+		border-color: transparent transparent transparent #CCC8B6
+
+	.gallery-main
+		&__title
+			width: 50%
+		&__item
+			width: 25%
+
+	.contact-us
+		&__info
+			width: 60%
+		&__forms
+			width: 40%
+			padding-left: 0
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+	.about-us
+		&__right, &__left
+			padding-left: 30px
+			padding-right: 30px
+
+@media only screen and (max-width : 900px)
+
+	.contact-us
+		padding-top: 50px
+		padding-bottom: 50px
+		&__info
+			width: 100%
+			float: none
+			padding-right: 0
+		&__forms
+			width: 100%
+			float: none
+	.info
+		&__text
+			max-width: 550px
+			margin: 0 auto
+			padding-top: 50px
+			padding-bottom: 50px
+		&__contacts
+			width: 265px
+			margin-left: 50px
+		&__work-hours
+			width: 265px
+		&__social
+			padding-top: 50px
+			padding-bottom: 50px
+
+	.contact-form
+		input[type="text"], input[type="email"], &__message
+			width: 75%
+			display: block
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 20px
+		&__submit
+			display: block
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 20px
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 800px)
+	/**/
+
+	.menu
+		width: 100%
+		&__items
+			float: none
+			margin-right: 0
+			display: block
+			font-size: 25px
+			line-height: 25px
+			color: #1a1a1a
+			background-color: rgba($accent, 0.8)
+			border: 3px solid #1a1a1a
+			box-shadow: 0 0 5px rgba(0,0,0,0.9)
+			font-family: "TimesNewRomanBold"
+			margin: 10px auto
+			padding: 5px
+			min-width: 200px
+			max-width: 350px
+		&__items:hover
+			border-bottom: 3px solid #1a1a1a
+		&__left, &__right
+			float: none
+			margin-top: 0
+			text-align: center
+		&__left
+			padding-top: 150px
+		&__logo
+			transform: translate(0px) !important
+			opacity: 1 !important
+
+	.gallery-1__item, .gallery-main__item
+		.overlay
+			display: none
+		&:hover img
+			transform: scale(1)
+	.zoo-img
+		transform: scale(1) !important
+
+@media only screen and (min-width : 800px)
+	.menu__items
+		transform: translate(0px) !important
+		opacity: 1 !important
+
+@media only screen and (max-width : 750px)
+
+	.about-us
+		&__left, &__right
+			float: none
+			width: 100%
+		&__left
+			min-height: 200px
+			padding: 0
+		&__right
+			background-position: 50% 30px
+			padding:
+				top: 130px
+				bottom: 50px
+			min-height: auto
+		&__description--tr
+			display: none
+
+	.gallery-1__item
+		width: 50%
+
+	.team
+		&__master-1-photo, &__master-description, &__master-2-photo
+			width: 100%
+			height: 500px
+		&__master-description
+			padding: 0 20px
+			.container-fmd
+				padding-right: 20px
+		&__name, &__description
+			padding-bottom: 20px
+		&__master-2-photo
+			float: right
+
+	.triangle--b
+		left: 50%
+		top: auto
+		bottom: 0
+		border-width: 0 30px 40px 30px
+		border-color: transparent transparent #CCC8B6 transparent
+		transform: translateX(-50%)
+
+	.gallery-main
+		&__title
+			width: 100%
+			height: 200px
+		&__item
+			width: 50%
+
+@media only screen and (max-width : 630px)
+
+	.info
+		&__contacts
+			float: none
+			margin: 0 auto
+			padding-right: 0
+		&__work-hours
+			float: none
+			padding-left: 0
+			margin: 0 auto
+			margin-top: 20px
+		&__title, &__phone, &__fax, &__email, &__adress, &__days
+			text-align: center
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/
+	.about-us
+		&__left
+			min-height: 100px
+		&__right
+			text-align: justify
+	.title-in-section
+		width: 250px
+		line-height: 50px
+	.title-in-section--contact-us
+		width: 275px;
+	.about-us
+		&__right, &__left
+			padding: 130px 15px 30px
+
+	.quote
+		&__text
+			.quote__quotes-l
+				font-size: 100px
+				top: 16px
+			.quote__quotes-r
+				font-size: 100px
+		&__name
+			bottom: 40px
+			left: 50%
+			right: auto
+			transform: translateX(-50%)
+
+	.team
+		&__title
+			height: 100px
+			padding: 130px 15px 30px
+		&__master-1-photo, &__master-2-photo
+			height: 350px
+		&__subscription
+			padding: 
+				left: 20px
+				right: 20px
+		&__social
+			i
+				font-size: 25px
+		&__subscription-input, &__subscription-submit
+			max-width: 100%
+
+	.gallery-main
+		&__title
+			height: 100px
+			padding: 130px 15px 30px
+
+	.info__social
+			padding-left: 5%
+			padding-right: 5%
+
+	.contact-form
+		input[type="text"], input[type="email"], &__message
+			width: 100%
+
+	#map
+		height: 500px
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+	.quote__text
+		left: 50%
+		transform: translate(-50%, -50%)

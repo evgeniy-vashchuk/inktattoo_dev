@@ -1,0 +1,24 @@
+$s-doctor-women: 0px 0px 0px 0px 128px 128px 271px 128px 'sprite.png'
+$s-doctor: 143px 0px -143px 0px 128px 128px 271px 128px 'sprite.png'
+
+
+
+=sprite-width($sprite)
+	width: nth($sprite, 5)
+
+=sprite-height($sprite)
+	height: nth($sprite, 6)
+
+=sprite-position($sprite)
+	$sprite-offset-x: nth($sprite, 3)
+	$sprite-offset-y: nth($sprite, 4)
+	background-position: $sprite-offset-x  $sprite-offset-y
+
+=sprite-image($sprite)
+	background-image: url(../img/sprite/sprite.png)
+
+=sprite($sprite)
+	+sprite-image($sprite)
+	+sprite-position($sprite)
+	+sprite-width($sprite)
+	+sprite-height($sprite)
